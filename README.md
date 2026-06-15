@@ -1,22 +1,14 @@
-# Soroban Project
+# TarotContract
 
-## Project Structure
+A simple smart contract built with Soroban SDK in Rust that manages users, credits, and Tarot card draws.
 
-This repository uses the recommended structure for a Soroban project:
+## Features
+- Initialize User: Register a new user with zero credits.
+- Top-up Credits: Add credits to a user’s account.
+- Draw Tarot Cards: Spend credits to draw cards from a fixed Tarot set.
 
-```text
-.
-├── contracts
-│   └── hello_world
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── test.rs
-│       └── Cargo.toml
-├── Cargo.toml
-└── README.md
-```
+## Contract Functions
 
-- New Soroban contracts can be put in `contracts`, each in their own directory. There is already a `hello_world` contract in there to get you started.
-- If you initialized this project with any other example contracts via `--with-example`, those contracts will be in the `contracts` directory as well.
-- Contracts should have their own `Cargo.toml` files that rely on the top-level `Cargo.toml` workspace for their dependencies.
-- Frontend libraries can be added to the top-level directory as well. If you initialized this project with a frontend template via `--frontend-template` you will have those files already included.
+### `init_user`
+```rust
+pub fn init_user(env: Env, user: String)
